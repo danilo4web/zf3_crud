@@ -1,0 +1,30 @@
+<h1> Lista de Produtos </h1>
+<a class="btn btn-success" href="<?php echo $this->url('produto', ['action' => 'adicionar']); ?>">Adicionar Produto</a>
+
+<?php if(count($produtos)) : ?>
+    <table class="table table-striped">
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Descrição</td>
+            <td>Quantidade</td>
+            <td>Preço</td>
+            <td>Actions</td>
+        </tr>
+        <?php foreach($produtos as $key => $produto) : ?>
+            <tr>
+                <td><?php echo $produto->getId; ?></td>
+                <td><?php echo $produto->getNome; ?></td>
+                <td><?php echo $produto->getDescricao; ?></td>
+                <td><?php echo $produto->getQuantidade; ?></td>
+                <td><?php echo $produto->getPreco; ?></td>
+                <td>
+                    <a href="<?php echo $this->url('produto', ['action' => 'editar', 'id' => $this->getId()]); ?>" class="btn btn-info">Editar</a>
+                    <a href="<?php echo $this->url('produto', ['action' => 'deletar', 'id' => $this->getId()]); ?>" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+<?php else : ?>
+    <div class="alert alert-info">Não existe produto cadastrado</div>
+<?php endif; ?>
