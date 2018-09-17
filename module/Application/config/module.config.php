@@ -27,29 +27,19 @@ return [
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/application[/:action]',
+                    'route'    => '/application[/:action',
                     'defaults' => [
                         'controller' => Controller\IndexController::class,
                         'action'     => 'index',
                     ],
                 ],
             ],
-            'produto' => [
-                'type'    => Segment::class,
-                'options' => [
-                    'route'    => '/produto[/:action]',
-                    'defaults' => [
-                        'controller' => Controller\ProdutoController::class,
-                        'action'     => 'index',
-                    ],
-                ],
-            ],             
         ],
     ],
     'controllers' => [
         'factories' => [
-            Controller\IndexController::class => InvokableFactory::class,
-            Controller\ProdutoController::class => InvokableFactory::class,
+            // Controller\IndexController::class => InvokableFactory::class,
+            // Controller\ProdutoController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
@@ -68,11 +58,4 @@ return [
             __DIR__ . '/../view',
         ],
     ],
-    'db' => [
-        'driver' => 'Pdo_Mysql',
-        'database' => 'vector',
-        'user' => 'root',
-        'pass' => '',
-        'hostname' => 'localhost'
-    ]
 ];

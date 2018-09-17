@@ -19,7 +19,9 @@
         "zendframework/zend-db": "^2.8.1",
         "zendframework/zend-mvc-form": "^1.0",
         "zendframework/zend-json": "^3.0",
-        "zendframework/zend-mvc-console": "^1.1.10"
+        "zendframework/zend-mvc-console": "^1.1.10",
+        "doctrine/doctrine-orm-module": "^2.1",
+        "doctrine/migrations": "^1.8"
     },
     "autoload": {
         "psr-4": {
